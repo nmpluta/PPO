@@ -1,12 +1,10 @@
-#include <stdio.h>
-#include "led.h"
 #include "ledInv.h"
 #include "ledPos.h"
 #include "stepper.h"
 #include "keyboard.h"
 
-
-void Delay(int iTimeInMs){
+void Delay(int iTimeInMs)
+{
 	int iCycle;
 	int iNumberOfCycles = 12000 * iTimeInMs;
 	
@@ -21,25 +19,29 @@ int main(void)
 	LedInv MyLedInv;
 	
 	enum KeyboardState eCurrentState = MyKeyboard.eRead();
-	if(eCurrentState == BUTTON_4)
+	switch(eCurrentState)
 	{
-		MyStepper.SetLed(&MyLedInv);
-	}
-	else
-	{
-		MyStepper.SetLed(&MyLedPos);
+		case BUTTON_4:
+			MyStepper.SetLed(&MyLedInv);
+		break;
+		default:
+			MyStepper.SetLed(&MyLedPos);
+		break;
 	}
 	
-	
-	while(1){
+	while(1)
+	{
 		eCurrentState = MyKeyboard.eRead();
-		if(eCurrentState == BUTTON_1)
+		switch(eCurrentState)
 		{
-			MyStepper.StepLeft();
-		}
-		else if(eCurrentState == BUTTON_2)
-		{
-			MyStepper.StepRight();
+			case BUTTON_1:
+				MyStepper.StepRight();
+				break;
+			case BUTTON_2:
+				MyStepper.StepLeft();
+				break;
+			default:
+				break;
 		}
 		Delay(500);
 	}

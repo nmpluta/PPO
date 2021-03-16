@@ -2,8 +2,6 @@
 #define STEPPER_H
 
 #include "led.h"
-#include "ledInv.h"
-
 
 class Stepper
 {

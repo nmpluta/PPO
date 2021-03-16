@@ -13,9 +13,6 @@ class Stepper
 	public:
 		void StepLeft(void);
 		void StepRight(void);
-		
-
-
 };
 
 #endif /* STEPPER_H */

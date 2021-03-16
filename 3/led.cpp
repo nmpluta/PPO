@@ -6,7 +6,6 @@
 #define LED2_bm (1<<18)
 #define LED3_bm (1<<19)
 
-
 void Led::Init(void)
 {
 	IO1DIR = IO1DIR | LED0_bm | LED1_bm | LED2_bm | LED3_bm;
@@ -17,21 +16,21 @@ void Led::On(unsigned char ucLedIndex)
 {
 	IO1CLR = (LED0_bm | LED1_bm | LED2_bm | LED3_bm);
 	
-	switch(ucLedIndex){
+	switch(ucLedIndex)
+	{
 		case 0:
 			IO1SET = LED0_bm;
-		break;
+			break;
 		case 1:
 			IO1SET = LED1_bm; 
-		break;
+			break;
 		case 2:
 			IO1SET = LED2_bm; 
-		break;
+			break;
 		case 3:
 			IO1SET = LED3_bm; 
-		break;
+			break;
 		default:
-		break;		
+			break;		
 	}
 }	
-

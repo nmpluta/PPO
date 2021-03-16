@@ -10,7 +10,6 @@ enum KeyboardState
 	BUTTON_4
 };
 
-
 class Keyboard
 {
 	public:

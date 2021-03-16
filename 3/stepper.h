@@ -1,7 +1,6 @@
 #ifndef STEPPER_H
 #define STEPPER_H
 
-
 class Stepper
 {
 	private:
@@ -11,7 +10,6 @@ class Stepper
 	public:
 		void StepLeft(void);
 		void StepRight(void);
-
 };
 
 #endif /* STEPPER_H */

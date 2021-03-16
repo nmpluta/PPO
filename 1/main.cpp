@@ -1,8 +1,7 @@
 #include "led.h"
-#include <stdio.h>
 
-
-void Delay(int iTimeInMs){
+void Delay(int iTimeInMs)
+{
 	int iCycle;
 	int iNumberOfCycles = 12000 * iTimeInMs;
 	

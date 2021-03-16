@@ -1,9 +1,7 @@
 #ifndef STEPPER_H
 #define STEPPER_H
 
-#include "led.h"
 #include "ledInv.h"
-
 
 class Stepper
 {
@@ -20,9 +18,6 @@ class Stepper
 		void StepLeft(void);
 		void StepRight(void);
 		void SetMode(unsigned char ucSetInv);
-		
-
-
 };
 
 #endif /* STEPPER_H */

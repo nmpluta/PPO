@@ -1,11 +1,10 @@
-#include <stdio.h>
-#include "led.h"
 #include "stepper.h"
 #include "keyboard.h"
 
 unsigned char ucInversion;
 
-void Delay(int iTimeInMs){
+void Delay(int iTimeInMs)
+{
 	int iCycle;
 	int iNumberOfCycles = 12000 * iTimeInMs;
 	
@@ -18,25 +17,29 @@ int main(void)
 	Stepper MyStepper;
 	
 	enum KeyboardState eCurrentState = MyKeyboard.eRead();
-	if(eCurrentState == BUTTON_4)
+	switch(eCurrentState)
 	{
-		ucInversion = 1;
-	}
-	else
-	{
-		ucInversion = 0; 
+		case BUTTON_4:
+			ucInversion = 1;
+			break;
+		default:
+			ucInversion = 0;
+			break;
 	}
 	
-	
-	while(1){
+	while(1)
+	{
 		eCurrentState = MyKeyboard.eRead();
-		if(eCurrentState == BUTTON_1)
+		switch(eCurrentState)
 		{
-			MyStepper.StepLeft();
-		}
-		else if(eCurrentState == BUTTON_2)
-		{
-			MyStepper.StepRight();
+			case BUTTON_1:
+				MyStepper.StepRight();
+				break;
+			case BUTTON_2:
+				MyStepper.StepLeft();
+				break;
+			default:
+				break;
 		}
 		Delay(500);
 	}

@@ -3,7 +3,7 @@
 
 #include "led.h"
 
-class Stepper : protected Led
+class Stepper : public Led
 {
 	private:
 		unsigned char LedCtr;
@@ -12,7 +12,6 @@ class Stepper : protected Led
 	public:
 		void StepLeft(void);
 		void StepRight(void);
-
 };
 
 #endif /* STEPPER_H */

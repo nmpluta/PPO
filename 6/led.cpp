@@ -17,7 +17,8 @@ void Led::On(unsigned char ucLedIndex)
 {
 	IO1CLR = (LED0_bm | LED1_bm | LED2_bm | LED3_bm);
 	
-	switch(ucLedIndex){
+	switch(ucLedIndex)
+	{
 		case 0:
 			IO1SET = LED0_bm;
 		break;

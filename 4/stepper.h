@@ -1,7 +1,6 @@
 #ifndef STEPPER_H
 #define STEPPER_H
 
-
 class Stepper
 {
 	private:

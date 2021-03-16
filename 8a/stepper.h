@@ -14,8 +14,6 @@ class Stepper
 		void StepLeft(void);
 		void StepRight(void);
 		
-
-
 };
 
 #endif /* STEPPER_H */

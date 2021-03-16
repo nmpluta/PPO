@@ -8,14 +8,12 @@ class Stepper
 	private:
 		unsigned char LedCtr;
 		void Step(enum Step eStep);
+		Led MyLed;
 	
 	public:
 		Stepper (unsigned char ucLedStartIndex=0);
 		void StepLeft(void);
 		void StepRight(void);
-		
-		Led MyLed;
-
 };
 
 #endif /* STEPPER_H */
