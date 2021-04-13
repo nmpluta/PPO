@@ -13,7 +13,7 @@ LedLcd::LedLcd(unsigned char ucColumn)
     privateLcd.Clear(LCD_COLOR_BLACK);
     privateLcd.SetBackColor(LCD_COLOR_RED);
     
-    uLedColumn = ucColumn;
+    uLedColumn = ucColumn*BUTTON_WIDTH;
 }
 
 void LedLcd::On(unsigned char ucLedIndex)
@@ -28,12 +28,12 @@ void LedLcd::On(unsigned char ucLedIndex)
         {
             privateLcd.SetTextColor(LCD_COLOR_BLUE);
         }
-        privateLcd.FillRect(1+BUTTON_WIDTH*uLedColumn, BUTTON_LENGTH*uIndex+1, BUTTON_WIDTH-2, BUTTON_LENGTH-2);
+        privateLcd.FillRect(1+uLedColumn, BUTTON_LENGTH*uIndex+1, BUTTON_WIDTH-2, BUTTON_LENGTH-2);
         
         privateLcd.SetTextColor(LCD_COLOR_GREEN);
-        privateLcd.DrawRect(BUTTON_WIDTH*uLedColumn, uIndex*BUTTON_LENGTH, BUTTON_WIDTH, BUTTON_LENGTH);
+        privateLcd.DrawRect(uLedColumn, uIndex*BUTTON_LENGTH, BUTTON_WIDTH, BUTTON_LENGTH);
         
         privateLcd.SetTextColor(LCD_COLOR_WHITE);
-        privateLcd.DisplayStringAt( BUTTON_WIDTH*uLedColumn, uIndex*BUTTON_LENGTH, (uint8_t *) Text[uIndex], LEFT_MODE);
+        privateLcd.DisplayStringAt(uLedColumn, uIndex*BUTTON_LENGTH, (uint8_t *) Text[uIndex], LEFT_MODE);
     }
 }

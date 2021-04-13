@@ -13,7 +13,7 @@ class LedLcd
     
     public:
         void On(unsigned char ucLedIndex);
-        LedLcd(unsigned char ucColumn);
+        LedLcd(unsigned char ucColumn = 0);
 };
 
 #endif /* LED_LCD_H */

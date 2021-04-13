@@ -22,7 +22,7 @@ class KeyboardTs
         
     public:
         enum KeyboardState eRead(void);
-        KeyboardTs(unsigned char ucColumn);
+        KeyboardTs(unsigned char ucColumn = 0);
 };
 
 

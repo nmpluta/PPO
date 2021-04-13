@@ -13,19 +13,18 @@ enum KeyboardState KeyboardTsLcd::eRead(void)
     {
         case BUTTON_0:
             pLed->On(0);
-            break;
+            return BUTTON_0;
         case BUTTON_1:
             pLed->On(1);
-            break;
+            return BUTTON_1;
         case BUTTON_2:
             pLed->On(2);
-            break;
+            return BUTTON_2;
         case BUTTON_3:
             pLed->On(3);
-            break;
-        default :
+            return BUTTON_3;
+        default:
             pLed->On(4);
-            break;
-    }
-    return ePressedButton; 
+            return RELASED;
+    } 
 }

@@ -11,7 +11,7 @@ class KeyboardTsLcd
         KeyboardTs *pKeyboard;
         LedLcd *pLed;
     public:
-        KeyboardTsLcd(unsigned char _ucColumn);
+        KeyboardTsLcd(unsigned char _ucColumn = 0);
         enum KeyboardState eRead(void);
 };
 
