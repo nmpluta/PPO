@@ -20,14 +20,17 @@ enum KeyboardState KeyboardTs::eRead(void)
         {
             if(TS_State.Y >= uIndex*BUTTON_LENGTH && TS_State.Y < (uIndex+1)*BUTTON_LENGTH)
             { 
-                if(uIndex == 0)
-                    return BUTTON_0;
-                else if(uIndex == 1)
-                    return BUTTON_1;
-                else if(uIndex == 2)
-                    return BUTTON_2;
-                else if(uIndex == 3)
-                    return BUTTON_3;
+                switch(uIndex)
+                {
+                    case 0:
+                        return BUTTON_0;
+                    case 1:
+                        return BUTTON_1;  
+                    case 2:
+                        return BUTTON_2;
+                    case 3:
+                        return BUTTON_3;         
+                }
             }
         }
     }
